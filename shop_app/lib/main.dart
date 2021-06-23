@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (ctx) => Products(),
+      create: (ctx) =>
+          Products(), //create a new inst. of object not a single el.
       child: MaterialApp(
         title: 'MyShop',
         theme: ThemeData(
