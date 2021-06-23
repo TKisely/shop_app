@@ -6,7 +6,8 @@ import 'package:shop_app/widgets/product_item.dart';
 class ProductsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final productsData = Provider.of<Products>(context);
+    final productsData =
+        Provider.of<Products>(context); // we want to listen here
     final products = productsData.items;
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
