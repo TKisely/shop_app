@@ -19,6 +19,11 @@ class Cart with ChangeNotifier {
     return total;
   }
 
+  void removieItem(String id) {
+    _items.remove(id);
+    notifyListeners();
+  }
+
   void addItem(String productId, double price, String title) {
     if (_items.containsKey(productId)) {
       //change q.
