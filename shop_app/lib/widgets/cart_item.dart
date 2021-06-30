@@ -24,6 +24,26 @@ class CartItem extends StatelessWidget {
       onDismissed: (direction) {
         Provider.of<Cart>(context, listen: false).removieItem(productId);
       },
+      confirmDismiss: (direction) {
+        return showDialog(
+            context: (context),
+            builder: (ctx) => AlertDialog(
+                  title: Text('Are you sure?'),
+                  content: Text('Remove the item?'),
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(true);
+                        },
+                        child: Text('Yes')),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(false);
+                        },
+                        child: Text('No'))
+                  ],
+                ));
+      },
       background: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Container(
