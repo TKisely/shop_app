@@ -31,7 +31,6 @@ class ProductItem extends StatelessWidget {
               icon: Icon(product.isFavorite ? Icons.star : Icons.favorite),
               onPressed: () {
                 product.toggleFavoriteStatus();
-                print('TODO:fav');
               },
             ),
           ),
@@ -45,7 +44,7 @@ class ProductItem extends StatelessWidget {
             icon: Icon(Icons.shopping_bag),
             onPressed: () {
               cart.addItem(product.id, product.price, product.title);
-              print('TODO:shop');
+              print('Added sg to cart');
             },
           ),
         ),
